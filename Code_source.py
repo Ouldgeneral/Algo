@@ -258,7 +258,7 @@ f.pack(side=LEFT)
 Button(f,text='A propos de Motus ITEEM',command=lambda:box.showinfo("Motus Iteem","Motus iteem est un jeu de devinette de mot et de vecteur cache  cette version a ete code par\n Malick Ould Hamdi")).pack(side=TOP)
 Button(f,text='Code_Source',command=lambda:webbrowser.open_new("https://github.com/Ouldgeneral/Algo")).pack(side=TOP)
 
-Label(f,text="1:Bien Placee ,2:Mal Placee ,3:Ca n'existe pas Nombre d'aide:").pack(side=LEFT)
+Label(f,text="1:Bien Placee ,2:Mal Placee ,0:Ca n'existe pas Nombre d'aide:").pack(side=LEFT)
 info_aide=Label(f,text=f"{Aider}")
 info_aide.pack(side=LEFT,fill=X,expand=YES)
 Context=Label(f0,font=('Arial',16))
