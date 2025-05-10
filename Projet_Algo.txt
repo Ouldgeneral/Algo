@@ -1,0 +1,70 @@
+Algorithme Exo35;
+var
+Cache,Propoz,Res:tableau[5]entier;
+i,j,k,score:entier;
+Egalite:booleen;
+Debut
+Egalite:=Faux;
+k:=1;
+score:=10;
+Pour i:=1 a 5 faire
+	Cache[i]:=Rand(10);
+	fait;
+Tantque(k<6 et Egalite=Faux) faire
+	Ecrire("Essaies numero:"k);
+	Ecrire("Entrez votre proposition:");
+	Pour i:=1 a 5 faire
+		Ecrire("Element :"i);
+		Lire(Propoz[i]);
+		Tantque(Propoz[i]<0 ou Propoz[i]>9) faire
+			Ecrire("Erreur ressayer");
+			Lire(Propoz[i]);
+		fait;
+	fait;
+	Pour i:=1 a 5 faire
+		Res[i]:=0;
+	fait;
+	Pour i:=1 a 5 faire
+		Pour j:=1 a 5 faire
+			Si(Propoz[i]=Cache[j] et i<>j) Alors
+				Res[i]:=2;
+			fsi;
+		fait;
+	fait
+	Pour i:=1 a 5 faire
+		Pour j:=1 a 5 faire
+			Si(Propoz[i]=Cache[j] et i=j) Alors
+				Res[i]:=1;
+			fsi;
+		fait;
+	fait;
+	Egalite:=Vrai;
+	Pour i:=1 a 5 faire
+		Si(Res[i]=2 ou Res[i]=0) Alors
+			Egalite:=Faux;
+		fsi;
+	fait;
+	Si(Egalite=Faux) Alors
+		score:=score-2;
+		Ecrire("Votre tableau est erronne");
+		Pour i:=1 a 5 faire
+			Ecrire(Res[i]);
+			case Res[i]:
+				0:Ecrire(Propoz[i]," n''existe meme pas");
+				1:Ecrire(Propoz[i]," existe et est bien placee");
+				2:Ecrire(Propoz[i]," existe mais mal placee");
+			fcase;
+		fait;
+	fsi;
+	k:=k+1;
+fait;
+Si(Egalite=Vrai) Alors
+	Ecrire("Vous avez gagnez ");
+Sinon
+	Ecrire("Vous avez perdu ");
+fsi;
+Ecrire("votre score est :",score," Le tableau cachee est:");
+Pour i:=1 a 5 faire
+	Ecrire(Cache[i]);
+fait;
+Fin.
