@@ -66,7 +66,7 @@ def genere():
     else:mot=False
     
     if(mot==True):
-        Cache=list(random.choice(Mot_cacher))
+        Cache=list(random.choice(Mot_cacher).upper())
         List_de_mot.pack(side=LEFT,expand=YES,fill=Y)
         Context['text']='Deviner le Mot cacher'
     else:
