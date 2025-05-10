@@ -298,8 +298,8 @@ try:
     with open("Les_mots.mot","r") as file:
         Le_mot=file.read().splitlines()
         for x in Le_mot:
-            if(len(x)==5 and x not in Mot_cacher):
-                Mot_cacher+=[x]
+            if(len(x)==5 and x not in Mot_cacher and x.isalpha()):
+                Mot_cacher+=[x.upper()]
 except FileNotFoundError:
     ()
 except PermissionError:
