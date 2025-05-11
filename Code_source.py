@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter import messagebox as box
 import random
 import webbrowser
+from tkinter import font
 #En tete Partie declaration 
 context={True:'mot',False:'vecteur'}
 Mot_cacher=["MALIK","ITEEM",'GARWI','SALIF','TERRE','RAFIK','ISLAM','FRERE',
