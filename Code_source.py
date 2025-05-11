@@ -27,6 +27,18 @@ Aider=0
 mot=False #ca permet de jouer au mot
 essaies=5 #nombre d'essais par defaut 5
 res_essais=[] #Resultat graphique de l'essai serait stocke et manipuler dans ce tableau
+def Apropos():
+    info=Toplevel()
+    info.title("A Propos de Motus ITEEM")
+    info.geometry("600x150")
+    info.grab_set()
+    Label(info,text="Motus iteem est un jeu de devinette de mot et de vecteur cache  cette version a ete code par\n Malick Ould Hamdi").pack(side=TOP)
+    
+    code_source=Label(info,text="Code Source",fg='blue',font=font.Font(underline=1) )
+    code_source.pack(side=TOP)
+    code_source.bind('<Button-1>',lambda e :webbrowser.open_new("https://github.com/Ouldgeneral/Algo"))
+    Button(info,text="Ok",command=info.destroy).pack(expand=YES)
+
 
 def Ajouter():
     #cette fonction permet a l'utilisateur d'ajouter un mot a la liste des mot aleatoire
@@ -255,8 +267,7 @@ f2.pack(side=TOP,fill=BOTH,expand=YES)
 f=Frame(f0)
 f.pack(side=LEFT)
 #Parties Visibles
-Button(f,text='A propos de Motus ITEEM',command=lambda:box.showinfo("Motus Iteem","Motus iteem est un jeu de devinette de mot et de vecteur cache  cette version a ete code par\n Malick Ould Hamdi")).pack(side=TOP)
-Button(f,text='Code_Source',command=lambda:webbrowser.open_new("https://github.com/Ouldgeneral/Algo")).pack(side=TOP)
+Button(f,text='A propos de Motus ITEEM',command=Apropos).pack(side=TOP)
 
 Label(f,text="1:Bien Placee ,2:Mal Placee ,0:Ca n'existe pas Nombre d'aide:").pack(side=LEFT)
 info_aide=Label(f,text=f"{Aider}")
