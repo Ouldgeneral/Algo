@@ -37,7 +37,7 @@ def Apropos():
     
     code_source=Label(info,text="Code Source",fg='blue',font=font.Font(underline=1) )
     code_source.pack(side=TOP)
-    code_source.bind('<Button-1>',lambda e :webbrowser.open_new("https://github.com/Ouldgeneral/Algo"))
+    code_source.bind('<Button-1>',lambda e :webbrowser.open_new("https://ouldgeneral.github.io/Algoprojet/"))
     Button(info,text="Ok",command=info.destroy).pack(expand=YES)
 
 
